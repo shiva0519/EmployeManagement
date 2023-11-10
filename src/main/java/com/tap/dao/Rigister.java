@@ -22,21 +22,28 @@ public class Rigister extends HttpServlet {
 		String email=request.getParameter("useremail");
 		String department=request.getParameter("userDepartment");
 		int salary=Integer.parseInt(request.getParameter("userSalary"));
-		
+		 
 		Employe e=new Employe(id,name,email,department,salary);
 		EmployeBoImpl e1=new EmployeBoImpl();
 		out=response.getWriter();
 		response.setContentType("text/html");
-		int i=e1.save(e);
-		if(i>0) {
-			out.print("<h1>INSERTED SUCCESSFULLY</h1>");
-		}
-		else {
-			out.print("<h1>INSERTED UNSUCCESSFULLY</h1>");
+		
+	
+			int i=e1.save(e);
+			if(i>0) {
+				out.print("<h1>INSERTED SUCCESSFULLY</h1>");
+			}
+			else {
+				out.print("<h1>INSERTED UNSUCCESSFULLY</h1>");
+			}
 		}
 		
-	}
-
+			
+		}
+		
+		
+		
+	
 	
 
-}
+
